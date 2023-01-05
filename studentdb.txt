@@ -1,0 +1,69 @@
+def average(marks,n):
+    add=0
+    for i in range(n):
+        add=add+marks[i]
+    avg=add/n
+
+    print("average score of class is : ")
+    print(avg)
+        
+
+def highest(marks,n):
+    max=marks[0]
+    for i in range(n):
+        if(max < marks[i]):
+            max = marks[i]
+
+    print("Highest score is : ",end='')
+    print(max)
+
+def lowest(marks,n):
+    min=marks[0]
+    for i in range(n):
+        if(min > marks[i]):
+            min=marks[i]
+
+    print("Lowest score is : ")
+    print(min)
+
+def absent(marks,n):
+    count=0
+    for i in range(n):
+        if(marks[i] < 0):
+            count +=1
+
+    print("Count of absent students is : ")
+    print(count)
+
+def hfrequency(marks,n):
+    s=set(marks)
+    freq=0
+    for i in s:
+        count=0
+        for j in range(n):
+            if(i == marks[j]):
+                count += 1
+        if(count > freq):
+            freq=count
+            k=i
+
+    print(k,"has highest frequency of",freq)
+
+marks=[]
+print("Enter total number of students : ")
+n=int(input())
+print("Enter marks : ")
+for i in range(n):
+    ele=int(input())
+    marks.append(ele)
+print(marks)
+
+average(marks,n)
+
+highest(marks,n)
+
+lowest(marks,n)
+
+absent(marks,n)
+
+hfrequency(marks,n)
